@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>המדריך שלי</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: #000;
+    }
+
+    /* ── TOP BANNER ── */
+    .banner {
+      background: #000;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .banner-logo {
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+
+    .banner-logo span {
+      color: #c0c0c0;
+      font-size: 11px;
+      font-weight: normal;
+      letter-spacing: 0;
+      margin-right: 6px;
+    }
+
+    .banner-links {
+      font-size: 11px;
+      color: #c0c0c0;
+    }
+
+    /* ── SEARCH BAR ── */
+    .search-section {
+      background: #c0c0c0;
+      border-top: 2px solid #808080;
+      border-bottom: 2px solid #808080;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .search-label {
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+      color: #000;
+    }
+
+    #search {
+      flex: 1;
+      padding: 4px 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      color: #000;
+      background: #fff;
+      border-top: 1px solid #404040;
+      border-left: 1px solid #404040;
+      border-right: 1px solid #dfdfdf;
+      border-bottom: 1px solid #dfdfdf;
+      outline: none;
+    }
+
+    .search-btn {
+      padding: 4px 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #000;
+      background: #c0c0c0;
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+      border-right: 2px solid #404040;
+      border-bottom: 2px solid #404040;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .search-btn:active {
+      border-top: 2px solid #404040;
+      border-left: 2px solid #404040;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* ── TABS ── */
+    .tabs-bar {
+      background: #e8e8e8;
+      border-bottom: 2px solid #000;
+      padding: 0 14px;
+      display: flex;
+      gap: 0;
+    }
+
+    .tab {
+      padding: 5px 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #000;
+      background: #c0c0c0;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      border-bottom: none;
+      cursor: pointer;
+      margin-left: 3px;
+      position: relative;
+      bottom: -2px;
+      text-decoration: none;
+    }
+
+    .tab:first-child { margin-right: 0; }
+
+    .tab.active {
+      background: #fff;
+      border-bottom: 2px solid #fff;
+      bottom: -2px;
+      z-index: 2;
+    }
+
+    /* ── RESULTS INFO ── */
+    .results-bar {
+      background: #e8e8e8;
+      border-bottom: 1px solid #aaa;
+      padding: 3px 14px;
+      font-size: 11px;
+      color: #444;
+    }
+
+    /* ── LIST ── */
+    .list-area {
+      padding: 0 14px;
+    }
+
+    .category-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      border-bottom: 2px solid #000;
+      margin: 15px 0 5px 0;
+      padding-bottom: 3px;
+    }
+
+    .item {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      padding: 8px 0;
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    .item:hover {
+      background: none;
+    }
+
+    .item-name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: underline;
+      margin-bottom: 2px;
+    }
+
+    .item:hover .item-name {
+      color: #444;
+    }
+
+    .item-url {
+      font-size: 11px;
+      color: #666;
+      font-family: "Courier New", monospace;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 3px;
+    }
+
+    .item-desc {
+      font-size: 12px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 24px;
+      border-top: 2px solid #000;
+      background: #e8e8e8;
+      padding: 6px 14px;
+      font-size: 11px;
+      color: #444;
+      text-align: center;
+    }
+
+    /* ── STATES ── */
+    .state {
+      padding: 40px 14px;
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+    }
+
+    mark {
+      background: #000;
+      color: #fff;
+      padding: 0 1px;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid #000;
+      margin: 0 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="banner-logo">
+    המדריך<span>גרסה 2.0</span>
+  </div>
+  <div class="banner-links">רשימת אתרים, אפליקציות ועדכונים</div>
+</div>
+
+<div class="search-section">
+  <span class="search-label">חיפוש:</span>
+  <input type="text" id="search" placeholder="הקלד מונח לחיפוש..." autocomplete="off">
+  <button class="search-btn" onclick="render()">חפש!</button>
+</div>
+
+<div class="tabs-bar">
+  <button class="tab active" data-tab="websites">אתרים</button>
+  <button class="tab" data-tab="apps">אפליקציות</button>
+  <button class="tab" data-tab="updates">עדכונים</button>
+</div>
+
+<div class="results-bar" id="count">&nbsp;</div>
+
+<hr class="divider">
+
+<div class="list-area" id="list"></div>
+
+<div class="footer">
+  המדריך שלי &copy; 2026 &nbsp;|&nbsp; נבנה ב-HTML טהור
+</div>
+
+<script>
+  const BASE_URL = 'https://raw.githubusercontent.com/sadkjasldjlajdj3323213sdad/t3/main/';
+
+  // מבנה נתונים מעודכן
+  let data = { websites: [], apps: [], fav_web: [], fav_apps: [], updates: [] };
+  let activeTab = 'websites';
+
+  function splitLine(line) {
+    const out = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { out.push(cur); cur = ''; }
+      else { cur += c; }
+    }
+    out.push(cur);
+    return out;
+  }
+
+  function parseCSV(text) {
+    const lines = text.trim().split('\n').filter(l => l.trim());
+    if (lines.length === 0) return [];
+    const headers = splitLine(lines[0]).map(h => h.trim().replace(/^"|"$/g, ''));
+    return lines.slice(1).map(line => {
+      const vals = splitLine(line).map(v => v.trim().replace(/^"|"$/g, ''));
+      return Object.fromEntries(headers.map((h, i) => [h, vals[i] || '']));
+    });
+  }
+
+  // פונקציית עזר לשליפת קובץ - מחזירה מערך ריק אם הקובץ לא נמצא (כדי למנוע קריסה)
+  async function fetchCSVData(filename, cacheBuster) {
+    try {
+      const res = await fetch(BASE_URL + filename + cacheBuster);
+      if (!res.ok) return []; // קובץ לא קיים
+      const text = await res.text();
+      return parseCSV(text);
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function highlight(text, q) {
+    if (!q) return text;
+    const esc = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(new RegExp(`(${esc})`, 'gi'), '<mark>$1</mark>');
+  }
+
+  function createItemHTML(item, q) {
+    return `
+      <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" class="item">
+        <div class="item-name">${highlight(item.name || 'ללא שם', q)}</div>
+        <div class="item-url">${item.url || ''}</div>
+        <div class="item-desc">${highlight(item.description || '', q)}</div>
+      </a>
+    `;
+  }
+
+  // פונקציה להסרת כפילויות (למשל אם אתר נמצא גם במועדפים וגם ברשימה הרגילה)
+  function getUniqueItems(arr) {
+    const seen = new Set();
+    return arr.filter(item => {
+      const key = item.url || item.name;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function render() {
+    const q = document.getElementById('search').value.trim().toLowerCase();
+    const listEl = document.getElementById('list');
+
+    if (q) {
+      // מצב חיפוש גלובלי
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      // איחוד רשימות מועדפים ורגילות לפני סינון
+      const allWeb = getUniqueItems([...data.fav_web, ...data.websites]);
+      const allApps = getUniqueItems([...data.fav_apps, ...data.apps]);
+      const allUpdates = data.updates;
+
+      const filterFn = item =>
+        (item.name || '').toLowerCase().includes(q) ||
+        (item.description || '').toLowerCase().includes(q) ||
+        (item.url || '').toLowerCase().includes(q);
+
+      const webFiltered = allWeb.filter(filterFn);
+      const appsFiltered = allApps.filter(filterFn);
+      const updatesFiltered = allUpdates.filter(filterFn);
+
+      const total = webFiltered.length + appsFiltered.length + updatesFiltered.length;
+      document.getElementById('count').textContent = `נמצאו ${total} תוצאות עבור: "${q}"`;
+
+      if (total === 0) {
+        listEl.innerHTML = `<div class="state">לא נמצאו תוצאות עבור "${q}"</div>`;
+        return;
+      }
+
+      let html = '';
+      if (webFiltered.length > 0) {
+        html += `<div class="category-title">אתרים (${webFiltered.length})</div>`;
+        html += webFiltered.map(item => createItemHTML(item, q)).join('');
+      }
+      if (appsFiltered.length > 0) {
+        html += `<div class="category-title">אפליקציות (${appsFiltered.length})</div>`;
+        html += appsFiltered.map(item => createItemHTML(item, q)).join('');
+      }
+      if (updatesFiltered.length > 0) {
+        html += `<div class="category-title">עדכונים (${updatesFiltered.length})</div>`;
+        html += updatesFiltered.map(item => createItemHTML(item, q)).join('');
+      }
+      listEl.innerHTML = html;
+
+    } else {
+      // מצב תצוגת טאב רגיל
+      document.querySelector(`.tab[data-tab="${activeTab}"]`).classList.add('active');
+      let html = '';
+      let totalItems = 0;
+
+      if (activeTab === 'updates') {
+        totalItems = data.updates.length;
+        document.getElementById('count').textContent = `מציג ${totalItems} עדכונים`;
+        if (totalItems > 0) {
+          html += data.updates.map(item => createItemHTML(item, "")).join('');
+        } else {
+          html = `<div class="state">אין עדכונים כרגע.</div>`;
+        }
+      } else {
+        const isWeb = activeTab === 'websites';
+        const favItems = isWeb ? data.fav_web : data.fav_apps;
+        const mainItems = isWeb ? data.websites : data.apps;
+        
+        totalItems = favItems.length + mainItems.length;
+        const label = isWeb ? 'אתרים' : 'אפליקציות';
+        document.getElementById('count').textContent = `מציג ${totalItems} ${label}`;
+
+        if (favItems.length > 0) {
+          html += `<div class="category-title">⭐ המועדפים שלי (Top 5)</div>`;
+          html += favItems.map(item => createItemHTML(item, "")).join('');
+        }
+        
+        if (mainItems.length > 0) {
+          html += `<div class="category-title">כל ה${label}</div>`;
+          html += mainItems.map(item => createItemHTML(item, "")).join('');
+        }
+
+        if (totalItems === 0) {
+          html = `<div class="state">רשימה ריקה.</div>`;
+        }
+      }
+      listEl.innerHTML = html;
+    }
+  }
+
+  async function init() {
+    document.getElementById('list').innerHTML = '<div class="state">טוען נתונים מ-GitHub...</div>';
+    try {
+      const cacheBuster = '?t=' + new Date().getTime();
+      
+      // טעינת כל 5 הקבצים במקביל - אי קיום קובץ לא יפיל את האתר
+      const results = await Promise.all([
+        fetchCSVData('websites.csv', cacheBuster),
+        fetchCSVData('apps.csv', cacheBuster),
+        fetchCSVData('fav_web.csv', cacheBuster),
+        fetchCSVData('fav_apps.csv', cacheBuster),
+        fetchCSVData('updates.csv', cacheBuster)
+      ]);
+
+      data.websites = results[0];
+      data.apps     = results[1];
+      data.fav_web  = results[2];
+      data.fav_apps = results[3];
+      data.updates  = results[4];
+
+      render();
+    } catch (e) {
+      document.getElementById('list').innerHTML =
+        `<div class="state">שגיאת רשת בטעינת הנתונים.</div>`;
+    }
+  }
+
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeTab = tab.dataset.tab;
+      document.getElementById('search').value = '';
+      render();
+    });
+  });
+
+  document.getElementById('search').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      render();
+    }
+  });
+
+  init();
+</script>
+</body>
+</html>
