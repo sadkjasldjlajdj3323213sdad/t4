@@ -396,7 +396,7 @@
         document.getElementById('count').textContent = `מציג ${totalItems} ${label}`;
 
         if (favItems.length > 0) {
-          html += `<div class="category-title">⭐ המועדפים שלי (Top 5)</div>`;
+          html += `<div class="category-title"> המועדפים שלי (Top 5)</div>`;
           html += favItems.map(item => createItemHTML(item, "")).join('');
         }
         
