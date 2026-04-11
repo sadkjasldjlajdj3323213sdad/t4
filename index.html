@@ -273,7 +273,7 @@
 <div class="list-area" id="list"></div>
 
 <div class="footer">
-  המדריך שלי &copy; 2026 &nbsp;|&nbsp; נבנה ב-HTML טהור
+בחסות איש השאלות בטוויטר ובניו
 </div>
 
 <script>
@@ -409,12 +409,12 @@
         document.getElementById('count').textContent = `מציג ${totalItems} ${label}`;
 
         if (favItems.length > 0) {
-          html += `<div class="category-title">המועדפים שלי</div>`;
+          html += `<div class="category-title">השיט</div>`;
           html += favItems.map(item => createItemHTML(item, "")).join('');
         }
         
         if (mainItems.length > 0) {
-          html += `<div class="category-title">כל ה${label}</div>`;
+          html += `<div class="category-title">שאר ה${label}</div>`;
           html += mainItems.map(item => createItemHTML(item, "")).join('');
         }
 

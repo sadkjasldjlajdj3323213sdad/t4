@@ -273,12 +273,12 @@
 <div class="list-area" id="list"></div>
 
 <div class="footer">
-  המדריך שלי &copy; 2026 &nbsp;|&nbsp; נבנה ב-HTML טהור
+בחסות איש השאלות בטוויטר ובניו
 </div>
 
 <script>
   // ערוך את הנתיב הזה כך שיצביע לתיקיית קובצי ה-CSV של Mac שלך ב-GitHub
-  const BASE_URL = 'https://raw.githubusercontent.com/sadkjasldjlajdj3323213sdad/t4/main/';
+  const BASE_URL = 'https://raw.githubusercontent.com/sadkjasldjlajdj3323213sdad/t4/main/win/';
   
   let data = { websites: [], apps: [], fav_web: [], fav_apps: [], updates: [] };
   let activeTab = 'websites';
@@ -397,7 +397,7 @@
         if (totalItems > 0) {
           html += data.updates.map(item => createItemHTML(item, "")).join('');
         } else {
-          html = `<div class="state">אין עדכונים כרגע.</div>`;
+          html = `<div class="state">אתה לבד חבוב!</div>`;
         }
       } else {
         const isWeb = activeTab === 'websites';
@@ -409,17 +409,17 @@
         document.getElementById('count').textContent = `מציג ${totalItems} ${label}`;
 
         if (favItems.length > 0) {
-          html += `<div class="category-title">המועדפים שלי</div>`;
+          html += `<div class="category-title">השיט</div>`;
           html += favItems.map(item => createItemHTML(item, "")).join('');
         }
         
         if (mainItems.length > 0) {
-          html += `<div class="category-title">כל ה${label}</div>`;
+          html += `<div class="category-title">שאר ה${label}</div>`;
           html += mainItems.map(item => createItemHTML(item, "")).join('');
         }
 
         if (totalItems === 0) {
-          html = `<div class="state">רשימה ריקה.</div>`;
+          html = `<div class="state">ווינדוס זה ללוזרים (אוסיף שיט גם בשבילכם PINKY PROMISE)</div>`;
         }
       }
       listEl.innerHTML = html;
